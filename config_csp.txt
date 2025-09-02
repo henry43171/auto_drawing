@@ -1,0 +1,5 @@
+# 來源模板檔案
+template=D:\csp\_template\temp.clip
+
+# 目標資料夾
+target=D:\csp\auto\
