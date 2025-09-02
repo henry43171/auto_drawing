@@ -11,14 +11,24 @@ for /f "tokens=1-3 delims=/- " %%a in ("%date%") do (
     set DATE=%%a%%b%%c
 )
 
-:: 設定目標檔名
+:: 設定初始目標檔名
 set TARGET_FILE=%target%%prefix%!DATE!.clip
 
+:: 如果檔案存在，自動加數字避免覆寫
+set COUNT=1
+set FILE=!TARGET_FILE!
+:checkfile
+if exist "!FILE!" (
+    set /A COUNT+=1
+    set FILE=%target%%prefix%!DATE!_!COUNT!.clip
+    goto checkfile
+)
+
 :: 複製模板
-copy "%template%" "!TARGET_FILE!" /Y
+copy "%template%" "!FILE!" /Y
 
 :: 開啟複製後的檔案
-start "" "!TARGET_FILE!"
+start "" "!FILE!"
 
 echo materials_folder=!materials_folder!
 
