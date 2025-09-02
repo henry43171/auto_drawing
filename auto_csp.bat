@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: 讀取 config
-for /f "usebackq tokens=1,2 delims==" %%A in ("config_csp.txt") do (
+for /f "usebackq tokens=1* delims==" %%A in ("config_csp.txt") do (
     set "%%A=%%B"
 )
 
@@ -20,4 +20,13 @@ copy "%template%" "!TARGET_FILE!" /Y
 :: 開啟複製後的檔案
 start "" "!TARGET_FILE!"
 
-endlocal
+echo materials_folder=!materials_folder!
+
+:: 開啟素材資料夾
+if exist "!materials_folder!" (
+    echo [!materials_folder!] exist!
+    start "" "!materials_folder!"
+) else (
+    echo [!materials_folder!] not exist!
+    start "" "%CD%"
+)
