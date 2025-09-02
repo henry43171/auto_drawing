@@ -1,3 +1,3 @@
-# 網址列表，用逗號分隔
+:: 網址列表，用逗號分隔
 https://pinterest.com
-https://posemaniacs.com
+https://www.posemaniacs.com/tools/thirtyseconds

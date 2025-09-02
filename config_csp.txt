@@ -1,11 +1,11 @@
-# 來源模板檔案
+:: 來源模板檔案
 template=D:\csp\_template\temp.clip
 
-# 目標資料夾
+:: 目標資料夾
 target=D:\csp\auto\
 
-# 複製檔案前綴
+:: 複製檔案前綴
 prefix=CSP_Work_
 
-# 素材資料夾
+:: 素材資料夾
 materials_folder=D:\csp\materials\Citizen Kane (1941)_2
