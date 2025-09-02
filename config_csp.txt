@@ -3,3 +3,6 @@ template=D:\csp\_template\temp.clip
 
 # 目標資料夾
 target=D:\csp\auto\
+
+# 複製檔案前綴
+prefix=CSP_Work_
