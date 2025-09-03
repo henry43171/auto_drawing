@@ -6,6 +6,12 @@ for /f "usebackq tokens=1* delims==" %%A in ("config_csp.txt") do (
     set "%%A=%%B"
 )
 
+:: 檢查目標資料夾是否存在，不存在則建立
+if not exist "%target%" (
+    echo Target folder does not exist, creating it: %target%
+    mkdir "%target%"
+)
+
 :: 取得日期，用於命名複製檔案
 for /f "tokens=1-3 delims=/- " %%a in ("%date%") do (
     set DATE=%%a%%b%%c
@@ -36,7 +42,4 @@ echo materials_folder=!materials_folder!
 if exist "!materials_folder!" (
     echo [!materials_folder!] exist!
     start "" "!materials_folder!"
-) else (
-    echo [!materials_folder!] not exist!
-    start "" "%CD%"
 )
