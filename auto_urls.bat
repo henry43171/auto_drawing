@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: 設定 config 檔路徑
-set CONFIG=urls.txt
+set CONFIG=config/urls.txt
 
 :: 讀取 config 檔，每行一個網址
 for /f "usebackq tokens=*" %%A in ("%CONFIG%") do (
