@@ -2,8 +2,8 @@
 chcp 65001 >nul
 setlocal enabledelayedexpansion
 
-:: 讀取 config_only_csp.txt
-for /f "usebackq tokens=1* delims==" %%A in ("config/config_csp_only.txt") do (
+:: 讀取 config_csp_project.txt
+for /f "usebackq tokens=1* delims==" %%A in ("config/config_csp_project.txt") do (
     set "%%A=%%B"
 )
 
