@@ -1,0 +1,8 @@
+:: 來源模板檔案
+template=D:\csp\_template\craft_a4_h_temp.clip
+
+:: 目標資料夾
+target=D:\csp\auto_craft\
+
+:: 複製檔案前綴
+prefix=Craft_

@@ -8,4 +8,4 @@ target=D:\csp\auto\
 prefix=CSP_Work_
 
 :: 素材資料夾
-materials_folder=D:\csp\materials\Citizen Kane (1941)_2
+materials_folder=D:\csp\materials\YOUR_FLODER
