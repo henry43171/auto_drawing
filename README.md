@@ -1,32 +1,47 @@
-# Auto Drawing Tools
+# 繪圖自動化工具 (CSP Automation Tools)
 
-This repository contains lightweight automation tools for managing daily drawing tasks.  
-The goal is to reduce repetitive steps and help maintain a consistent drawing practice.
+本儲存庫包含輕量級的自動化工具，示範軟體是 Clip Studio Paint。目的是減少繪畫前的重複步驟，協助維持固定的繪圖習慣、快速進入創作狀態。
 
-## Files
+---
 
-- `auto_urls.bat`  
-  Opens a set of predefined websites for reference.  
-  Configuration is read from `config/urls.txt` (copied from the example in `config_example/`).
+## 🚀 選擇你的「今日繪圖模式」
 
-- `auto_csp.bat`  
-  Creates a new Clip Studio Paint (CSP) file based on a template and opens it.  
-  Also opens a materials folder.  
-  Configuration is read from `config/config_csp.txt` (copied from the example in `config_example/`).
+與其手動開啟軟體，可以根據當下的心情與目標，一鍵進入適合的環境。
 
-- `config_example/`  
-  Contains sample configuration files (`urls.txt`, `config_csp.txt`) that serve as templates.  
-  Copy them into a `config/` folder and adjust to your own environment.
+| 模式名稱 | 執行檔案 | 適合場景 | 核心價值 |
+| :--- | :--- | :--- | :--- |
+| **暖身模式** | `auto_urls.bat` | 想看參考圖、手感練習 | 一鍵開啟設定好的多個參考網站，強迫進入繪圖腦。 |
+| **數位速寫模式** | `auto_csp_a4_h.bat` | 每日塗鴉、數位速寫 | 自動產生「日期編號」的 A4 畫布，點開即畫，不浪費時間設定。 |
+| **主題進修模式** | `auto_csp_with_folder.bat` | 專攻特定主題（如：手部、色彩） | 同時開啟練習檔與「素材參考資料夾」，減少練習前找視窗的分心和煩躁。 |
+| **專案趕稿模式** | `auto_csp_project.bat` | 延續先前的完稿進度 | 「回到戰場」的一鍵指令，直接開啟指定的專案檔案。 |
 
-## Usage
+---
 
-1. Copy the example configs from `config_example/` into a new folder called `config/`.  
-2. Edit the configs in `config/` according to your needs.  
-3. Run the desired batch file (`auto_urls.bat` or `auto_csp.bat`) to perform automation.  
-4. CSP files will be created with a date-based filename to avoid overwriting previous work.
+## 🛠️ 使用方式 (快速上手)
 
-## Notes
+1. **準備環境**：將 `config_example/` 資料夾複製一份，並重新命名為 `config/`。
+2. **修改路徑**：編輯 `config/` 內的 `.txt` 檔案，填入你電腦中對應的模板路徑或網址。
+3. **開始繪圖**：點擊適合你的 `.bat` 檔案。
 
-- Ensure all paths are valid. Using non-English characters in file paths may cause issues with batch execution.  
-- These tools are lightweight and intended for personal daily use.  
-- The batch files include simple safeguards to prevent accidental overwrites.
+> *進階建議*
+> 1. 可將常用腳本建立**桌面捷徑**（例如 `auto_csp_a4_h.bat`）。
+> 2. 或搭配 **Windows 工作排程器** 定時啟動（例如 `auto_urls.bat`），養成繪圖習慣。
+
+---
+
+## 📁 檔案說明 (技術細節)
+
+本工具採「設定與執行分離」設計，所有個人路徑均儲存在 `config/` 內，不會被 Git 追蹤。
+
+- **`auto_urls.bat`**: 批次開啟瀏覽器標籤頁。
+- **`auto_csp_a4_h.bat`**: 複製指定的模板檔案並重新命名（格式：`Craft_YYYYMMDD.clip`）。
+- **`auto_csp_with_folder.bat`**: 除了建立新檔，會同步開啟 Windows 檔案總管至指定的素材目錄。
+- **`auto_csp_project.bat`**: 單純開啟 `config` 中指定的單一檔案路徑。
+
+---
+
+## ⚠️ 注意事項
+
+- **路徑字元**：請確保所有路徑有效。若路徑包含中文，建議將 `.bat` 檔案以 `ANSI` 編碼儲存，以確保批次檔能正確讀取。
+- **防覆蓋機制**：新建檔案腳本皆包含日期編號，避免意外覆蓋舊有的作品。
+- **輕量化設計**：本工具專為個人日常工作流設計，適合追求極簡與效率的繪師。
