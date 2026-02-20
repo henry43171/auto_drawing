@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: 讀取 config
-for /f "usebackq tokens=1* delims==" %%A in ("config/config_csp.txt") do (
+for /f "usebackq tokens=1* delims==" %%A in ("config/config_csp_with_folder.txt") do (
     set "%%A=%%B"
 )
 
