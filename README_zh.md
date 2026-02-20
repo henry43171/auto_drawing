@@ -14,9 +14,9 @@
   - **開啟一組或多組預先定義好的參考網站**。
   - 設定檔讀取自 `config/urls.txt` (從 `config_example/` 中的範例複製)。
 
-- `auto_csp.bat`
+- `auto_csp_with_folder.bat`
   - **複製一個設定好的 .clip 模板並開啟，同時開啟素材資料夾**。
-  - 設定檔讀取自 `config/config_csp.txt` (從 `config_example/` 中的範例複製)。
+  - 設定檔讀取自 `config/config_csp_with_folder.txt` (從 `config_example/` 中的範例複製)。
 
 - `auto_csp_project.bat`
   - **開啟一個固定的 .clip 檔，趕稿用**。
@@ -24,14 +24,14 @@
 
 ## 設定檔說明
 - `config_example/`
-  - 包含作為模板的範例設定檔 (`urls.txt`, `config_csp.txt`)。
+  - 包含作為模板的範例設定檔 (`urls.txt`、`config_csp_with_folder.txt`等等)。
   - 請將它們複製到 `config/` 資料夾中，並根據你的環境進行調整。
 
 ## 使用方式
 
 1.  將 `config_example/` 中的範例設定檔複製到一個名為 `config/` 的新資料夾中。
 2.  依據需求編輯 `config/` 資料夾中的設定檔。
-3.  執行所需的批次檔 (`auto_urls.bat` 或 `auto_csp.bat`) 來進行自動化操作。
+3.  執行所需的批次檔 (`auto_urls.bat` 或 `auto_csp_with_folder.bat`) 來進行自動化操作。
 4.  新建立的 CSP 檔案會以日期命名，以避免覆蓋舊檔案。
 5.  **可以搭配 Windows 的工作排程器，設定時間，自動化開啟腳本。**
 
