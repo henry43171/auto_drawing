@@ -7,5 +7,8 @@ target=D:\csp\auto\
 :: 複製檔案前綴
 prefix=CSP_Work_
 
+:: 複製檔案後綴
+suffix=_Exercise
+
 :: 素材資料夾
 materials_folder=D:\csp\materials\YOUR_FLODER
