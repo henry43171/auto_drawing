@@ -6,3 +6,12 @@ target=D:\csp\auto_craft\
 
 :: 複製檔案前綴
 prefix=Craft_
+
+:: 複製檔案後綴
+suffix=
+
+:: 是否開啟目標資料夾 (True / False)
+open_target_folder=True
+
+:: 素材資料夾(預設留空)
+materials_folder=
