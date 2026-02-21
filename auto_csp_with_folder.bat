@@ -53,7 +53,15 @@ if exist "!FILE!" (
     exit /b
 )
 
-:: 8. 開啟素材資料夾
+:: 8. 開啟目標資料夾 (依據 True/False 參數)
+if /i "%open_target_folder%"=="True" (
+    if exist "%target%" (
+        echo [系統] 開啟目標資料夾...
+        start "" "%target%"
+    )
+)
+
+:: 9. 開啟素材資料夾
 if exist "%materials_folder%" (
     start "" "%materials_folder%"
 )

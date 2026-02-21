@@ -10,5 +10,8 @@ prefix=CSP_Work_
 :: 複製檔案後綴
 suffix=_Exercise
 
+:: 是否開啟目標資料夾 (True / False)
+open_target_folder=True
+
 :: 素材資料夾
 materials_folder=D:\csp\materials\YOUR_FLODER
