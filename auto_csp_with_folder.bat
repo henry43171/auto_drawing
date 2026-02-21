@@ -24,6 +24,7 @@ if not "%target:~-1%"=="\" set "target=%target%\"
 
 :: 4. 檢查並建立目標資料夾
 if not exist "%target%" (
+    echo [系統] 資料夾已建立。
     mkdir "%target%"
 )
 
@@ -46,6 +47,7 @@ if exist "!FILE!" (
 copy "%template%" "!FILE!" /Y >nul
 
 if exist "!FILE!" (
+    echo [系統] 檔案建立完成。
     start "" "!FILE!"
 ) else (
     echo [錯誤] 檔案建立失敗。
@@ -58,13 +60,15 @@ if /i "%open_target_folder%"=="True" (
     if exist "%target%" (
         echo [系統] 開啟目標資料夾...
         start "" "%target%"
+        timeout /t 1 >nul
     )
 )
 
 :: 9. 開啟素材資料夾
 if exist "%materials_folder%" (
+    echo [系統] 開啟素材資料夾...
     start "" "%materials_folder%"
 )
 
 echo [完成] 檔名為: !FILE!
-timeout /t 3
+timeout /t
