@@ -16,7 +16,11 @@ set "pdf_ref=!pdf_ref:~0!"
 :: 開啟 Clip Studio 檔案
 if defined template (
     if not "!template!"=="" (
-        start "" "!template!"
+        if exist "!template!" (
+            start "" "!template!"
+        ) else (
+            echo .clip 檔案不存在或路徑錯誤，跳過。
+        )
     )
 )
 
