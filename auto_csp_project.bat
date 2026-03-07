@@ -9,6 +9,16 @@ for /f "usebackq tokens=1* delims==" %%A in ("config/config_csp_project.txt") do
 
 :: 去掉前後空格（防止 config 有空格）
 set "template=!template:~0!"
+set "sample_folder=!sample_folder:~0!"
 
-:: 開啟模板檔案（支援中文路徑）
-start "" "!template!"
+:: 開啟 Clip Studio 檔案
+if defined template (
+    start "" "!template!"
+)
+
+:: 如果有設定範例資料夾就開啟
+if defined sample_folder (
+    if not "!sample_folder!"=="" (
+        start "" "!sample_folder!"
+    )
+)
