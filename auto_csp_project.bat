@@ -23,7 +23,11 @@ if defined template (
 :: 開啟 PDF 參考
 if defined pdf_ref (
     if not "!pdf_ref!"=="" (
-        start "" "!pdf_ref!"
+        if exist "!pdf_ref!" (
+            start "" "!pdf_ref!"
+        ) else (
+            echo PDF 檔案不存在或路徑錯誤，跳過。
+        )
     )
 )
 
