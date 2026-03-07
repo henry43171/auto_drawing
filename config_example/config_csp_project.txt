@@ -1,2 +1,5 @@
 template=D:\csp\YOUR_PROJECT.clip
+
 sample_folder=
+
+homework_folder=
