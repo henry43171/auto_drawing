@@ -27,18 +27,26 @@ if defined pdf_ref (
     )
 )
 
-:: 開啟範例資料夾
-if defined sample_folder (
-    if not "!sample_folder!"=="" (
-        start "" "!sample_folder!"
+:: 開啟範例資料夾（僅在不為空時）
+if defined sample_folder if not "!sample_folder!"=="" (
+    if exist "!sample_folder!\" (
+        dir /a /b "!sample_folder!" | findstr . >nul && (
+            start "" "!sample_folder!"
+        ) || (
+            echo 範例資料夾為空，跳過。
+        )
     )
 )
 
 timeout /t 1 >nul
 
-:: 開啟作業資料夾
-if defined homework_folder (
-    if not "!homework_folder!"=="" (
-        start "" "!homework_folder!"
+:: 開啟作業資料夾（僅在不為空時）
+if defined homework_folder if not "!homework_folder!"=="" (
+    if exist "!homework_folder!\" (
+        dir /a /b "!homework_folder!" | findstr . >nul && (
+            start "" "!homework_folder!"
+        ) || (
+            echo 作業資料夾為空，跳過。
+        )
     )
 )
