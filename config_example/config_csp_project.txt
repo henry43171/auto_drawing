@@ -1,5 +1,7 @@
 template=D:\csp\YOUR_PROJECT.clip
 
+pdf_ref=
+
 sample_folder=
 
 homework_folder=
