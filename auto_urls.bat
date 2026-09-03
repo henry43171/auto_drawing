@@ -10,7 +10,8 @@ for /f "usebackq tokens=*" %%A in ("%CONFIG%") do (
     :: 忽略空行或註解
     if not "!LINE!"=="" if "!LINE:~0,1!" NEQ "#" (
         @REM start msedge "!LINE!"
-        start "" "C:\Program Files\LibreWolf\librewolf.exe" "!LINE!"
+        @REM start "" "C:\Program Files\LibreWolf\librewolf.exe" "!LINE!"
+        DuckDuckGo "!LINE!"
     )
 )
 
