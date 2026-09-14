@@ -28,25 +28,20 @@ for /f "usebackq tokens=1* delims==" %%A in ("!CONFIG_PATH!") do (
     )
 )
 
-:: --- 以下邏輯維持不變 ---
-
 :: 2. 穩定取得日期 (YYYYMMDD)
-for /f "tokens=2 delims==" %%a in ('wmic os get localdatetime /value') do (
-    set "dt=%%a"
-)
-set "DATE_STR=!dt:~0,8!"
+for /f "delims=" %%a in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "DATE_STR=%%a"
 
 :: 3. 路徑正規化
-if not "%target:~-1%"=="\" set "target=%target%\"
+if not "!target:~-1!"=="\" set "target=!target!\"
 
 :: 4. 檢查並建立目標資料夾
-if not exist "%target%" (
+if not exist "!target!" (
     echo [系統] 正在建立目標資料夾...
-    mkdir "%target%"
+    mkdir "!target!"
 )
 
 :: 5. 設定目標檔名
-set "TARGET_BASE=%target%%prefix%!DATE_STR!%suffix%"
+set "TARGET_BASE=!target!!prefix!!DATE_STR!!suffix!"
 set "FILE=!TARGET_BASE!.clip"
 
 :: 6. 自動加數字避免覆寫邏輯
@@ -59,7 +54,7 @@ if exist "!FILE!" (
 )
 
 :: 7. 複製與開啟
-copy "%template%" "!FILE!" /Y >nul
+copy "!template!" "!FILE!" /Y >nul
 
 if exist "!FILE!" (
     echo [系統] 檔案建立完成: !FILE!
@@ -71,18 +66,18 @@ if exist "!FILE!" (
 )
 
 :: 8. 開啟目標資料夾
-if /i "%open_target_folder%"=="True" (
-    if exist "%target%" (
+if /i "!open_target_folder!"=="True" (
+    if exist "!target!" (
         echo [系統] 開啟目標資料夾...
-        start "" "%target%"
+        start "" "!target!"
         timeout /t 1 >nul
     )
 )
 
 :: 9. 開啟素材資料夾
-if exist "%materials_folder%" (
+if exist "!materials_folder!" (
     echo [系統] 開啟素材資料夾...
-    start "" "%materials_folder%"
+    start "" "!materials_folder!"
 )
 
 echo [完成] 祝創作愉快！
